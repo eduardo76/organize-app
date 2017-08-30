@@ -1,4 +1,4 @@
-# vuetifyjs
+# Organize App
 
 > A Vue.js project
 
