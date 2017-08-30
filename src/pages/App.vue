@@ -7,7 +7,7 @@
         <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
 
         <v-list class="pa-0">
-          <v-list-tile avatar tag="div">
+          <v-list-tile avatar tag="div" router to="/objetos">
             <v-list-tile-content>
               <v-list-tile-title>Organize</v-list-tile-title>
             </v-list-tile-content>
@@ -19,7 +19,7 @@
       <v-divider></v-divider>
 
       <v-list class="pt-2">
-        <v-list-tile v-for="item in items" :key="item.title">
+        <v-list-tile v-for="item in items" :key="item.title" router :to="item.link">
           <v-list-tile-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-tile-action>
@@ -28,7 +28,7 @@
 
         <v-divider></v-divider>
 
-        <v-list-tile>
+        <v-list-tile router to="/configuracoes">
           <v-list-tile-action>
             <v-icon>settings</v-icon>
           </v-list-tile-action>
@@ -113,9 +113,9 @@
       return {
         drawer: false,
         items: [
-          { title: 'Objetos', icon: 'dashboard' },
-          { title: 'Tarefas', icon: 'today' },
-          { title: 'Sensores', icon: 'settings_remote' }
+          { title: 'Objetos', icon: 'dashboard', link: '/objetos' },
+          { title: 'Tarefas', icon: 'today', link: '/tarefas' },
+          { title: 'Sensores', icon: 'settings_remote', link: '/sensores' }
         ],
         items2: [
           { title: 'Carteira' },
