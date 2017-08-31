@@ -2,7 +2,7 @@
   <v-app id="example-2" toolbar>
 
     <v-toolbar fixed class="indigo" dark prominent>
-      <v-btn icon to="/">
+      <v-btn icon to="/" exact>
         <v-icon>arrow_back</v-icon>
       </v-btn>
       <v-toolbar-title>Configurações</v-toolbar-title>

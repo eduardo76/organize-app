@@ -2,8 +2,8 @@
   <v-app id="example-2" toolbar>
 
     <v-toolbar fixed class="indigo" dark prominent>
-      <v-btn icon to="/">
-        <v-icon>arrow_back</v-icon>
+      <v-btn icon to="/" exact>
+        <v-icon light>arrow_back</v-icon>
       </v-btn>
       <v-toolbar-title>Objetos</v-toolbar-title>
       <v-spacer></v-spacer>
@@ -76,14 +76,7 @@
           { title: 'Bolsa Notebook' },
         ],
 
-        items3: [
-          { icon: 'dashboard', iconClass: 'grey lighten-1 white--text', title: 'Carteira', subtitle: 'Jan 9, 2014' },
-          { icon: 'dashboard', iconClass: 'grey lighten-1 white--text', title: 'Chave do Carro', subtitle: 'Jan 17, 2014' },
-          { icon: 'dashboard', iconClass: 'grey lighten-1 white--text', title: 'Chave de Casa', subtitle: 'Jan 28, 2014' },
-          { icon: 'dashboard', iconClass: 'grey lighten-1 white--text', title: 'Celular', subtitle: 'Jan 28, 2014' },
-          { icon: 'dashboard', iconClass: 'grey lighten-1 white--text', title: 'Relógio', subtitle: 'Jan 28, 2014' },
-          { icon: 'dashboard', iconClass: 'grey lighten-1 white--text', title: 'Bolsa Notebook', subtitle: 'Jan 28, 2014' }
-        ],
+        items3: this.$store.getters.objetos,
         items4: [
           { icon: 'assignment', iconClass: 'blue white--text', title: 'Vacation itinerary', subtitle: 'Jan 20, 2014' },
           { icon: 'call_to_action', iconClass: 'amber white--text', title: 'Kitchen remodel', subtitle: 'Jan 10, 2014' },

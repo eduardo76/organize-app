@@ -49,6 +49,8 @@
         <v-icon>search</v-icon>
       </v-btn>
 
+      <v-text-field label="Subject" value="Plans for the weekend" single-line full-width hide-details dark v-show="pesquisa"></v-text-field>
+
       <v-menu offset-y>
         <v-btn icon slot="activator">
           <v-icon>more_vert</v-icon>
@@ -88,6 +90,7 @@
   export default {
     data () {
       return {
+        pesquisa: false,
         drawer: false,
         items: [
           { title: 'Objetos', icon: 'dashboard', link: '/objetos' },
