@@ -1,64 +1,15 @@
 <template>
   <v-app id="example-2" toolbar>
 
-    <v-navigation-drawer temporary light v-model="drawer">
-
-      <v-toolbar flat class="transparent pt-2 pb-2">
-        <v-toolbar-side-icon @click.native.stop="drawer = !drawer"></v-toolbar-side-icon>
-
-        <v-list class="pa-0">
-          <v-list-tile avatar tag="div">
-            <v-list-tile-content>
-              <v-list-tile-title>Objetos</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list>
-
-      </v-toolbar>
-
-      <v-divider></v-divider>
-
-      <v-list class="pt-2">
-        <v-list-tile v-for="item in items" :key="item.title">
-          <v-list-tile-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>{{ item.title }}</v-list-tile-content>
-        </v-list-tile>
-
-        <v-divider></v-divider>
-
-        <v-list-tile>
-          <v-list-tile-action>
-            <v-icon>settings</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>Configurações</v-list-tile-content>
-        </v-list-tile>
-
-      </v-list>
-
-    </v-navigation-drawer>
-
     <v-toolbar fixed class="indigo" dark prominent>
-      <v-toolbar-side-icon @click.native.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>Objetos</v-toolbar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>search</v-icon>
+      <v-btn icon to="/">
+        <v-icon>arrow_back</v-icon>
       </v-btn>
-
-      <v-menu offset-y>
-        <v-btn icon slot="activator">
-          <v-icon>more_vert</v-icon>
-        </v-btn>
-        <v-list>
-          <v-list-tile v-for="item in items" :key="item.title">
-            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-          </v-list-tile>
-        </v-list>
-      </v-menu>
+      <v-toolbar-title>Objetos</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn icon to="/objetos/editar">
+        <v-icon>add</v-icon>
+      </v-btn>
     </v-toolbar>
 
     <main class="background-color: grey lighten-3">
@@ -67,24 +18,23 @@
 
         <v-subheader>Objetos</v-subheader>
 
-        <v-card class="mb-3" v-for="item in items2" :key="item.title">
-          <v-card-title primary-title>
-            <div>
-              <h3 class="headline mb-0">{{ item.title }}</h3>
-              <!-- <div>Located two hours south of Sydney in the Southern Highlands of New South Wales, ...</div> -->
-            </div>
-            <!-- <v-icon v-bind:class="[item.active ? 'indigo--text' : 'grey--text']">more_vert</v-icon> -->
-          </v-card-title>
-
-          <v-card-actions class="white">
-            <v-spacer></v-spacer>
-            <v-btn icon>
-              <v-icon>edit</v-icon>
-            </v-btn>
-            <v-btn icon @click.native.stop="dialog = true">
-              <v-icon>delete</v-icon>
-            </v-btn>
-          </v-card-actions>
+        <v-card>
+          <v-list two-line>
+            <v-list-tile avatar v-for="item in items3" :key="item.title" to="/objetos/editar">
+              <v-list-tile-avatar>
+                <v-icon :class="[item.iconClass]">{{ item.icon }}</v-icon>
+              </v-list-tile-avatar>
+              <v-list-tile-content>
+                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+                <!-- <v-list-tile-sub-title>{{ item.subtitle }}</v-list-tile-sub-title> -->
+              </v-list-tile-content>
+              <v-list-tile-action>
+                <v-btn icon ripple>
+                  <v-icon class="grey--text text--lighten-1">chevron_right</v-icon>
+                </v-btn>
+              </v-list-tile-action>
+            </v-list-tile>
+          </v-list>
         </v-card>
 
         <!--v-router-->
@@ -124,6 +74,19 @@
           { title: 'Celular' },
           { title: 'Relógio' },
           { title: 'Bolsa Notebook' },
+        ],
+
+        items3: [
+          { icon: 'dashboard', iconClass: 'grey lighten-1 white--text', title: 'Carteira', subtitle: 'Jan 9, 2014' },
+          { icon: 'dashboard', iconClass: 'grey lighten-1 white--text', title: 'Chave do Carro', subtitle: 'Jan 17, 2014' },
+          { icon: 'dashboard', iconClass: 'grey lighten-1 white--text', title: 'Chave de Casa', subtitle: 'Jan 28, 2014' },
+          { icon: 'dashboard', iconClass: 'grey lighten-1 white--text', title: 'Celular', subtitle: 'Jan 28, 2014' },
+          { icon: 'dashboard', iconClass: 'grey lighten-1 white--text', title: 'Relógio', subtitle: 'Jan 28, 2014' },
+          { icon: 'dashboard', iconClass: 'grey lighten-1 white--text', title: 'Bolsa Notebook', subtitle: 'Jan 28, 2014' }
+        ],
+        items4: [
+          { icon: 'assignment', iconClass: 'blue white--text', title: 'Vacation itinerary', subtitle: 'Jan 20, 2014' },
+          { icon: 'call_to_action', iconClass: 'amber white--text', title: 'Kitchen remodel', subtitle: 'Jan 10, 2014' },
         ],
         mini: false,
         right: null,

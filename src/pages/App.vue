@@ -62,31 +62,8 @@
     </v-toolbar>
 
     <main class="background-color: grey lighten-3">
-      <v-container> <!-- fluid -->
-        <!-- <div class="title">Click on sidebar to re-open.</div> -->
-
-        <v-subheader>Objetos</v-subheader>
-
-        <v-card class="mb-3" v-for="item in items2" :key="item.title">
-          <v-card-title primary-title>
-            <div>
-              <h3 class="headline mb-0">{{ item.title }}</h3>
-              <!-- <div>Located two hours south of Sydney in the Southern Highlands of New South Wales, ...</div> -->
-            </div>
-            <!-- <v-icon v-bind:class="[item.active ? 'indigo--text' : 'grey--text']">more_vert</v-icon> -->
-          </v-card-title>
-
-          <v-card-actions class="white">
-            <v-spacer></v-spacer>
-            <v-btn icon>
-              <v-icon>edit</v-icon>
-            </v-btn>
-            <v-btn icon @click.native.stop="dialog = true">
-              <v-icon>delete</v-icon>
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-
+      <v-container>
+        <!-- fluid -->
         <!--v-router-->
       </v-container>
 

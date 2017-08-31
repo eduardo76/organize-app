@@ -4,6 +4,7 @@ import Hello from '@/components/Hello'
 // import App from '@/App'
 
 import Objetos from '@/pages/Objetos.vue'
+import ObjetosForm from '@/pages/ObjetosForm.vue'
 import Sensores from '@/pages/Sensores.vue'
 import Tarefas from '@/pages/Tarefas.vue'
 import Configuracoes from '@/pages/Configuracoes.vue'
@@ -28,22 +29,27 @@ export default new Router({
       path: '/configuracoes',
       name: 'configuracoes',
       component: Configuracoes
-      },
-      {
+    },
+    {
       path: '/objetos',
       name: 'objetos',
       component: Objetos,
-      },
-      {
+    },
+    {
+      path: '/objetos/editar',
+      name: 'objetoseditar',
+      component: ObjetosForm,
+    },
+    {
       path: '/sensores',
       name: 'sensores',
       component: Sensores,
-      },
-      {
+    },
+    {
       path: '/tarefas',
       name: 'tarefas',
       component: Tarefas,
       //   props: true
-      }
+    }
   ]
 })
