@@ -1,4 +1,6 @@
 <template>
+
+<transition name="slide-y-reverse-transition" mode="out-in">
   <v-app id="example-2" toolbar>
 
     <v-toolbar fixed class="indigo" dark prominent>
@@ -55,6 +57,8 @@
     </main>
 
   </v-app>
+</transition>
+
 </template>
 
 <script>
